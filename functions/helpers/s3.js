@@ -7,7 +7,7 @@ const { s3Client } = require("../utils/aws");
 async function uploadImage (photo, key) {
     const data = {
         Body: Buffer.from(photo, 'base64'), 
-        Bucket: process.env.BUCKET,
+        Bucket: process.env.BUCKET || functions.config().BUCKET,
         Key: `${key}.jpg`,
     };
         

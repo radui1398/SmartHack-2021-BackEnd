@@ -1,35 +1,11 @@
 "use strict";
-const functions = require("firebase-functions");
 const router = require("express").Router();
-var AWS = require('aws-sdk');
-const { uploadImage } = require("../../helpers/s3");
 const 
 {
     compareFaces , 
     detectFace
 } = require("../../helpers/rekognition");
 
-
-router.get("/compare", (req, res) => res.json(process.env));
-
-
-router.put("/register", async (req, res) => {
-    const {
-        nin: userId,
-        picture,
-        ...userData
-    } = req.body;
-    try {
-        if (picture) {
-            await uploadImage(picture, userId);
-        }
-        await db.collection("users").doc(userId).set(userData);
-        return res.sendStatus(200);
-    } catch (error) {
-        console.error(error);
-        return res.sendStatus(500);
-    }
-});
 
 router.post("/compare", async (req, res) => {
     const picture = req.body.picture;
