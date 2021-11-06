@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
         return res.sendStatus(404);
     }
 
-    const baseUrl = process.env.S3_BASE_URL || functions.config().S3_BASE_URL;
+    const baseUrl = functions.config().aws.s3baseurl;
     const user = {
         ...rawResponse.data(),
         picture: `${baseUrl}${userId}.jpg`,

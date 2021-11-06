@@ -1,10 +1,10 @@
 "use strict";
+
 const router = require("express").Router();
-const 
-{
-    compareFaces , 
-    detectFace
-} = require("../../helpers/rekognition");
+const {
+        compareFaces, 
+        detectFace
+    } = require("../../helpers/rekognition");
 
 
 router.post("/compare", async (req, res) => {

@@ -2,7 +2,7 @@
 
 const functions = require("firebase-functions");
 
-require("dotenv").config();
+// require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use("/users", require("./routes/users"));
 app.use("/faces", require("./routes/faces"));
 
-// exports.app = functions.https.onRequest(app);
+exports.app = functions.https.onRequest(app);
 
-// app.listen(4000, () => console.log("app is listening on port 4000"));
+// app.listen(9083, () => console.log("app is listening on port 9083"));
 

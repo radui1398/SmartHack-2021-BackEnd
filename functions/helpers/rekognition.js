@@ -11,7 +11,7 @@ async function compareFaces (photo, key) {
         SimilarityThreshold: 90, 
         SourceImage: {
             S3Object: {
-                Bucket:  process.env.BUCKET || functions.config().Bucket,
+                Bucket:  functions.config().aws.bucket,
                 Name: `${key}.jpg`,
             }
         }, 
@@ -34,7 +34,7 @@ async function detectFace(picture) {
     const params = {
         Image: {
           S3Object: {
-            Bucket: process.env.BUCKET || functions.config().Bucket,
+            Bucket: functions.config().aws.bucket,
             Name: `${picture}.jpg`
           },
         },
