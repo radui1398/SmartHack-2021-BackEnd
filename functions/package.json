@@ -13,11 +13,14 @@
   },
   "main": "index.js",
   "dependencies": {
+    "aws-sdk": "^2.1023.0",
     "firebase-admin": "^9.8.0",
     "firebase-functions": "^3.14.1"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
+    "dotenv": "^10.0.0",
+    "firebase-functions-test": "^0.2.0",
+    "nodemon": "^2.0.14"
   },
   "private": true
 }
