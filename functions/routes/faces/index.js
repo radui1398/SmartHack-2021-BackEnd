@@ -11,9 +11,9 @@ router.post("/compare", (req, res) => {
 
     console.log(process.env)
     const options = {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID || functions.config().accessKeyId,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY  || functions.config().secretAccessKey,
-        region: process.env.AWS_REGION ||  functions.config().region
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID || functions.config().AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY  || functions.config().AWS_SECRET_ACCESS_KEY,
+        region: process.env.AWS_REGION ||  functions.config().AWS_REGION,
     }
     
     AWS.config.update(options);
