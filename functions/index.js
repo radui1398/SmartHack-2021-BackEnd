@@ -14,9 +14,9 @@ app.use(cors({origin: true}));
 app.use(bodyParser.json());
 
 app.use("/users", require("./routes/users"));
-// app.use("/faces", require("./routes/faces"));
+app.use("/faces", require("./routes/faces"));
 
-exports.app = functions.https.onRequest(app);
+// exports.app = functions.https.onRequest(app);
 
 // app.listen(4000, () => console.log("app is listening on port 4000"));
 

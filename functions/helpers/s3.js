@@ -1,7 +1,8 @@
 "use strict";
 
-const {AWS} = require("../utils/aws"),
-    s3Client = new AWS.S3();
+const functions = require("firebase-functions");
+const { s3Client } = require("../utils/aws");
+
 
 async function uploadImage (photo, key) {
     const data = {
@@ -21,5 +22,5 @@ async function uploadImage (photo, key) {
 }
 
 module.exports = {
-    uploadImage,
+    uploadImage
 };
