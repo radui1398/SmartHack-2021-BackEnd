@@ -1,10 +1,7 @@
 "use strict";
 
 const functions = require("firebase-functions");
-const { rekognition } = require("../utils/aws");
-
-const {DetectFacesRequest} = require("aws-sdk");
-
+const {rekognition} = require("../utils/aws");
 
 async function compareFaces (photo, key) {
     const params = {
@@ -30,7 +27,7 @@ async function compareFaces (photo, key) {
     });
 }
 
-async function detectFace(picture) {
+async function detectFace (picture) {
     const params = {
         Image: {
           S3Object: {
