@@ -14,8 +14,12 @@
   "main": "index.js",
   "dependencies": {
     "aws-sdk": "^2.1023.0",
+    "express-multipart-file-parser": "^0.1.2",
     "firebase-admin": "^9.8.0",
-    "firebase-functions": "^3.14.1"
+    "firebase-functions": "^3.14.1",
+    "lodash": "^4.17.21",
+    "microsoft-cognitiveservices-speech-sdk": "^1.19.0",
+    "multer": "^1.4.3"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
